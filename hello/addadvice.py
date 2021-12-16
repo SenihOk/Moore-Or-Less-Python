@@ -1,6 +1,5 @@
 import json
 import requests
-import django
 
 class Advice:
     def __init__(self, text):
