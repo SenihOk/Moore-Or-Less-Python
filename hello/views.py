@@ -14,7 +14,8 @@ def index(request):
     return render(request, "index.html")
 
 def twitterAPI(request):
-    return HttpResponse(ApiCall().getTrends())
+    trends = [ApiCall().getTrends()]
+    return HttpResponse(trends)
 
     # return HttpResponse(addadvice.Advice('test').addAdvice())
 
