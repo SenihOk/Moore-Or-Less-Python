@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
+
+from apiCall import ApiCall
 from .models import Greeting
 import hello.addadvice as addadvice
 
@@ -12,7 +14,10 @@ def index(request):
     return render(request, "index.html")
 
 def twitterAPI(request):
-    return HttpResponse(addadvice.Advice('test').addAdvice())
+    return HttpResponse(ApiCall().getTrends())
+
+    # return HttpResponse(addadvice.Advice('test').addAdvice())
+
 
 
 
